@@ -1,0 +1,11 @@
+Header always set Content-Security-Policy: upgrade-insecure-requests
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:koksgns.com
+#RewriteEngine on
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} (www\.)?koksgns.com
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:koksgns.com
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^koksgns.com [NC]
+RewriteRule ^(.*)$ https://www.koksgns.com/$1 [L,R=301]
